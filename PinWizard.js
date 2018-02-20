@@ -1,7 +1,8 @@
 module.exports =
 class PinWizard {
-	constructor(OIPJS) {
+	constructor(OIPJS, config) {
 		this.OIPJS_ = OIPJS
+		this.config_ = config
 	}
 
 	updateClusterPins(onSuccess, onError) {
@@ -67,10 +68,13 @@ class PinWizard {
 			var IPFSHashes = [];
 
 			for (var artifact of artifacts){
-				var hash = _this.OIPJS_.Artifact.getLocation(artifact);
+				// Check if the artifact is the same type as a supported type.
+				if (_this.config_.supported_types.indexOf(_this.OIPJS_.Artifact.getType(artifact)) !== -1){
+					var hash = _this.OIPJS_.Artifact.getLocation(artifact);
 
-				if (IPFSHashes.indexOf(hash) === -1)
-					IPFSHashes.push(hash)
+					if (IPFSHashes.indexOf(hash) === -1)
+						IPFSHashes.push(hash)
+				}
 			}
 
 			onSuccess(IPFSHashes)

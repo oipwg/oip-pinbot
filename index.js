@@ -2,8 +2,10 @@ var OIPJS = require('oip-js');
 
 var PinWizard = require('./PinWizard.js');
 
+var config = require('./config.js');
+
 var UpdatePins = function(){
-	var wiz = new PinWizard(OIPJS);
+	var wiz = new PinWizard(OIPJS, config);
 
 	wiz.updateClusterPins(function(overallPins, totalPinned, newPins, unableToPins){
 		console.log("Pinned " + totalPinned + "/" + overallPins + " | " + newPins + " new Pins | Unable to pin " + unableToPins);
