@@ -15,6 +15,6 @@
   "author": "Skylar Young <sky@alexandria.io>",
   "license": "MIT",
   "dependencies": {
-    "oip-js": "^1.0.20"
+    "oip-js": "^1.0.21"
   }
 }

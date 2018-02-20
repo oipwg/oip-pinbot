@@ -1,4 +1,4 @@
-var OIPJS = require('oip-js');
+var OIPJS = require('oip-js')();
 
 var PinWizard = require('./PinWizard.js');
 
