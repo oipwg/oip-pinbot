@@ -1,8 +1,17 @@
-var OIPJS = require('oip-js')();
+var config = require('./config.js');
+
+var OIPJS = require('oip-js').OIPJS({
+	artifactFilters: [function(artifact){
+		for (var i = 0; i < config.supported_types.length; i++){
+			if (artifact.getType() === config.supported_types[i] && artifact.getNetwork() === "IPFS"){
+				return true;
+			}
+		}
+		return false;
+	}]
+});
 
 var PinWizard = require('./PinWizard.js');
-
-var config = require('./config.js');
 
 var UpdatePins = function(){
 	var wiz = new PinWizard(OIPJS, config);
@@ -10,7 +19,7 @@ var UpdatePins = function(){
 	wiz.updateClusterPins(function(overallPins, totalPinned, newPins, unableToPins){
 		console.log("Pinned " + totalPinned + "/" + overallPins + " | " + newPins + " new Pins | Unable to pin " + unableToPins);
 	}, function(error){
-		console.error(error);
+		// console.error(error);
 	});
 }
 

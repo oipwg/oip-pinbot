@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -15,6 +16,7 @@
   "author": "Skylar Young <sky@alexandria.io>",
   "license": "MIT",
   "dependencies": {
-    "oip-js": "^1.0.21"
+    "cids": "^0.5.3",
+    "oip-js": "1.1.8"
   }
 }

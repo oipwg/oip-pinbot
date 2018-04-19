@@ -68,13 +68,10 @@ class PinWizard {
 			var IPFSHashes = [];
 
 			for (var artifact of artifacts){
-				// Check if the artifact is the same type as a supported type.
-				if (_this.config_.supported_types.indexOf(_this.OIPJS_.Artifact.getType(artifact)) !== -1){
-					var hash = _this.OIPJS_.Artifact.getLocation(artifact);
+				var hash = artifact.getLocation();
 
-					if (IPFSHashes.indexOf(hash) === -1)
-						IPFSHashes.push(hash)
-				}
+				if (IPFSHashes.indexOf(hash) === -1)
+					IPFSHashes.push(hash)
 			}
 
 			onSuccess(IPFSHashes)
