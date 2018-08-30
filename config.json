@@ -1,0 +1,9 @@
+{
+	"type": "Video",
+	"ipfs": {
+		"host": "your-ipfs-cluster-host",
+		"port": 9095,
+		"protocol": "http"
+	},
+	"pin_interval_minutes": 30
+}

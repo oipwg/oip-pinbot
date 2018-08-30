@@ -1,11 +1,12 @@
 {
   "name": "oip-pinbot",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node lib/index.js",
+    "compile": "./node_modules/.bin/babel -d lib/ src/",
+    "test": "jest"
   },
   "keywords": [
     "OIP",
@@ -17,6 +18,14 @@
   "license": "MIT",
   "dependencies": {
     "cids": "^0.5.3",
-    "oip-js": "1.1.8"
+    "ipfs-api": "^24.0.1",
+    "oip-index": "^1.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.51",
+    "@babel/core": "^7.0.0-beta.51",
+    "@babel/preset-env": "^7.0.0-beta.51",
+    "babel-core": "^7.0.0-bridge.0",
+    "jest": "^23.2.0"
   }
 }
