@@ -11,9 +11,14 @@ Step 1. Clone the repository to a local folder on your machine using the followi
 git clone https://github.com/oipwg/oip-pinbot
 ```
 
-Step 2. Update the `config.json` file with your desired config values.
+Step 2. Install required dependencies
+```bash
+npm install
+```
 
-Step 3. Startup the service using
+Step 3. Update the `config.json` file with your desired config values.
+
+Step 4. Startup the service using
 ```bash
 npm start
 ```
