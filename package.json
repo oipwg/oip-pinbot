@@ -1,7 +1,7 @@
 {
   "name": "oip-pinbot",
   "version": "2.0.0",
-  "description": "",
+  "description": "Automatically Pin Artifacts files to an IPFS Cluster instance",
   "main": "lib/index.js",
   "scripts": {
     "start": "node lib/index.js",
@@ -17,7 +17,6 @@
   "author": "Skylar Young <sky@alexandria.io>",
   "license": "MIT",
   "dependencies": {
-    "cids": "^0.5.3",
     "ipfs-api": "^24.0.1",
     "oip-index": "^1.1.1"
   },
