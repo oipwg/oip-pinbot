@@ -41,3 +41,5 @@ There are multiple configuration options available, they are as follows.
 `subtype`: The Subtype of Artifacts you wish to Pin. All others will be filtered out. If no subtype is provided, then PinBot will get all Subtypes of Artifacts.
 
 `pin_interval_minutes`: The interval (in minutes) that you wish to attempt new pins
+
+`OIPdURL`: The URL of the OIPd server you wish to use
